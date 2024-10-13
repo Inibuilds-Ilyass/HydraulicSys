@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1vw;
 }
 .extpwrbtn > button{
     width: 4vw;

@@ -1,0 +1,10 @@
+.Environement{
+    color: white;padding: 1vw;
+    background-color: rgb(40, 54, 54);
+    
+    width: 20vw;
+    height: 100vh;
+}
+.Environement span{
+    color: green;
+}

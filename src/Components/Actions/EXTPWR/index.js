@@ -1,14 +1,26 @@
+import React, { useState, useEffect, useContext} from "react";
+import BTN from "../BTN";
 
-import "./index.css"
-function EXTPWR(){
-    return(
-        <div className="extpwrbtn">
-            <button>
-                <div className="btnName">EXT PWR</div>
-                <div className="btnAction"><p>on</p></div>
-            </button>
+import { Context } from "../../../App";
+
+function ExtPwr(props) {
+
+    const [ACPower, setACPower] = useContext(Context);
+
+    
+    const handleACPowerToggle = () => {
+        setACPower(prevState => !prevState);
+    };
+
+    return (
+        <div>
+            <BTN
+                name="EXT PWR"
+                onClick={handleACPowerToggle} 
+                isACPowerOn={ACPower}   
+            />
         </div>
-    )
+    );
 }
 
-export default EXTPWR
+export default ExtPwr;

@@ -1,0 +1,11 @@
+.Action{
+    width: 40vw;
+    height: 100vh;
+}
+.Electricity{
+    border-bottom: 1px solid white;
+}
+
+.Pumps{
+    border-bottom: 1px solid white;
+}

@@ -1,9 +1,23 @@
-import EXTPWR from "./EXTPWR"
+import ExtPwr from "./ExtPwr"
+import BlueElectricPump from "./BlueElecPump";
+import "./index.css"
 
-function Action(){
+import { useState, useEffect } from 'react';
+
+function Action(props){
+
+
     return(
-        <div>
-            <EXTPWR/>
+        <div className="Action">
+            <div className="Electricity">
+                <ExtPwr
+                />
+            </div>
+            
+            <div className="Pumps">
+                <BlueElectricPump
+                />
+            </div>
         </div>
     )
 }
