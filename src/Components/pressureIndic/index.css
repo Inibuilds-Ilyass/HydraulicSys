@@ -1,0 +1,28 @@
+
+.PressIndicationContainer {
+    display: flex;               /* Enable Flexbox */
+    flex-direction: column;      /* Arrange children vertically */
+    align-items: center;         /* Center items horizontally */
+    justify-content: center;      /* Center items vertically if needed */
+    /* height: 100%;                Ensure it takes up height if necessary */
+}
+
+.Line{
+    background-color: green;
+    height: 10vw;
+    width: 0.1vw;
+}
+
+.PressIndication{
+    color: green;
+    font-size: 1.5vw;
+    font-weight: 700;
+}
+
+.Arrow{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Half width */
+    border-right: 10px solid transparent; /* Half width */
+    border-bottom: 20px solid green; /* Color of the arrow */
+}

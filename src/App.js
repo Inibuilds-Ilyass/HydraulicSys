@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+
 import './App.css';
+
+import HydraulicSYS from './Components/HydraulicSYS';
+import Action from './Components/Actions';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <HydraulicSYS
+          HydraulicSYSName = {"Green"}
+          FluidQte={1.45} 
+          FluidminQTE={0.25}
+          Indication = {3000}
+          ShutOff = {false}
+        />
+        
+        <HydraulicSYS
+          HydraulicSYSName = {"Blue"}
+          FluidQte={1.45} 
+          FluidminQTE={0.45}
+          Indication = {3000}
+          ShutOff = {false}
+        />
+        
+        
+        <HydraulicSYS
+          HydraulicSYSName = {"Yellow"}
+          FluidQte={1.45} 
+          FluidminQTE={0.25}
+          Indication = {3000}
+          ShutOff = {false}
+        />
+      </div>
+      
+      <Action/>
+    </>
   );
 }
 

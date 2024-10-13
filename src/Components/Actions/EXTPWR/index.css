@@ -1,0 +1,35 @@
+.extpwrbtn{
+    width: 5vw;
+    height: 5vw;
+    border: 1px yellow solid;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.extpwrbtn > button{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 5px;
+    background-color: rgb(8, 8, 8);
+    color:white;
+    cursor: pointer;
+    
+}
+.extpwrbtn > button > div{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2vw;
+
+}
+.btnName{
+    color: rgb(173, 173, 15);
+    font-size: 0.5vw;
+}
+.btnAction>p{
+    border: 1px aqua solid;
+    width: 4vw;
+    color: aqua;
+}
