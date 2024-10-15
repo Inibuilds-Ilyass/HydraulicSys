@@ -1,10 +1,15 @@
 import "./index.css"
 
-import React, { useEffect, useState } from "react";
+import { Context } from "../../App";
+
+import React, { useEffect, useState , useContext} from "react";
 
 function PressureIndication(props){
 
     const [pressure, setPressure] = useState(0); // State to hold the pressure value
+
+    // const { GreenHydraulicPressure, BlueHydraulicPressure, YellowHydraulicPressure} = useContext(Context);
+
 
 
     function presurizeAnimation(){
@@ -55,9 +60,30 @@ function PressureIndication(props){
 
     return(
         <div className="PressIndicationContainer">
-            <div className="Arrow"></div>
-            <div className="PressIndication"><p>{pressure}</p></div>
-            <div className="Line"></div>
+            <div className="HydraulicSYSName">
+              <span
+                style={{ 
+                  color: (props.Indication === 0) ? `orange` : `green`,
+                }}
+              >{props.HydraulicSYSName}</span>
+              </div>
+            <div className="Arrow"
+              style={{ 
+                borderBottom: (props.Indication === 0) ? `20px solid orange` : `20px solid green`,
+              }}
+            ></div>
+            <div className="PressIndication">
+              <p
+                style={{ 
+                  color: (props.Indication === 0) ? `orange` : `green`,
+                }}
+              >{pressure}</p>
+            </div>
+            <div className="Line"
+              style={{ 
+                backgroundColor: (props.Indication === 0) ? `orange` : `green`,
+              }}
+            ></div>
         </div>
     )
 }

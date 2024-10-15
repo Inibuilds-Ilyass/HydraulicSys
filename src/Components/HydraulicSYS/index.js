@@ -9,9 +9,10 @@ import PressureIndication from "../pressureIndic";
 function HydraulicSYS(props){
     return(
         <div className="HydraulicSYS">
-            <div className="HydraulicSYSName"><span>{props.HydraulicSYSName}</span></div>
+            
             <PressureIndication
                 Indication = {props.Indication}
+                HydraulicSYSName = {props.HydraulicSYSName}
             />
             <EDP
                 LowState = {(props.LowState == true) ? true : false}
