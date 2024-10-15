@@ -1,0 +1,20 @@
+
+.ElectricPump {
+    display: flex;            /* Use flexbox for alignment */
+    align-items: center;     /* Center items vertically */
+    translate: 0 -10vh;
+}
+.ElectricPump > p{
+    display: flex;            /* Use flexbox for alignment */
+    align-items: center;     /* Center items vertically */
+    color: white;
+}
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;   /* Adjust size as needed */
+    border-bottom: 10px solid transparent; /* Adjust size as needed */
+    border-right: 10px solid white;        /* Change color as needed */
+    margin-right: 5px;                     /* Add space between triangle and text */
+}
+  

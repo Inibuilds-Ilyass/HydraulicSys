@@ -4,8 +4,48 @@
 }
 .Electricity{
     border-bottom: 1px solid white;
+    display: flex;
 }
 
 .Pumps{
     border-bottom: 1px solid white;
+    display: flex;
+}
+
+
+.extpwrbtn{
+    width: 5vw;
+    height: 5vw;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+}
+.extpwrbtn > button{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 5px;
+    background-color: rgb(8, 8, 8);
+    color:white;
+    cursor: pointer;
+    
+}
+.extpwrbtn > button > div{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2vw;
+
+}
+.btnName{
+    color: rgb(173, 173, 15);
+    font-size: 0.5vw;
+}
+.btnAction>p{
+    width: 4vw;
+    color: aqua;
+    
+    border: 1px aqua solid;
 }

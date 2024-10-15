@@ -7,7 +7,7 @@ import { Context } from "../../App";
 function Environement(props) {
     // Initialize states from localStorage
     
-  const [ACPower, setACPower] = useContext(Context);
+    const { ACPower, BlueElecPump, CargoDoor } = useContext(Context);
 //   const [ElecPump, setElecPump] = useContext(false);
 //   const [CargoDoor, setCargoDoor] = useContext(false);
   

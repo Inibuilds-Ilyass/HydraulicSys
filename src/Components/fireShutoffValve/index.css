@@ -1,6 +1,6 @@
 .circle {
-    width: 3vw;
-    height: 3vw;
+    width: 2.5vw;
+    height: 5vh;
     border-radius: 50%;
     border: 2px solid green;
     position: relative;
@@ -8,13 +8,14 @@
 
 .line {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 2px;
-    height: 150%;
+    /* top: 50%;
+    left: 50%; */
+    width: 5vh;
+    /* height: 150%; */
     background-color: green;
 
-    transform-origin: top; /* Set the point of rotation */
+    translate: 0 2vw;
+    /* transform-origin: top;  */
 }
 
 

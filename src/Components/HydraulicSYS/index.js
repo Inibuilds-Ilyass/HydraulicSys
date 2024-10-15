@@ -14,10 +14,11 @@ function HydraulicSYS(props){
                 Indication = {props.Indication}
             />
             <EDP
-                LowState = {(props.ShutOff == true) ? true : false}
+                LowState = {(props.LowState == true) ? true : false}
             />
             <FireShutoffValve
                 Shut = {props.ShutOff}
+                Render = {props.ShutoffRender}
             />
             <Reservoir
                 FluidQte={props.FluidQte} 

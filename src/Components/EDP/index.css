@@ -13,8 +13,8 @@
     width: 2px;
     height: 150%;
     background-color: green;
-
-    transform-origin: top; /* Set the point of rotation */
+    translate: -1px -2.2vw;
+    /* transform-origin: bottom; Set the point of rotation */
 }
 
 

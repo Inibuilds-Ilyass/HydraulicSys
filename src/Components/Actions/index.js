@@ -1,8 +1,13 @@
 import ExtPwr from "./ExtPwr"
-import BlueElectricPump from "./BlueElecPump";
+import BluePumpComponent from "./BluePump";
+import YellowPumpComponent from "./YellowPump";
+import GreenPumpComponent from "./GreenPump";
+import ElectricPump from "./ElectricPump";
+
+
 import "./index.css"
 
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 function Action(props){
 
@@ -15,8 +20,10 @@ function Action(props){
             </div>
             
             <div className="Pumps">
-                <BlueElectricPump
-                />
+                <GreenPumpComponent/>
+                <BluePumpComponent/>
+                <YellowPumpComponent/>
+                <ElectricPump/>
             </div>
         </div>
     )
