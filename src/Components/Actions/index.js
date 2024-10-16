@@ -3,11 +3,10 @@ import BluePumpComponent from "./BluePump";
 import YellowPumpComponent from "./YellowPump";
 import GreenPumpComponent from "./GreenPump";
 import ElectricPump from "./ElectricPump";
+import PTU from "./PTU";
 
 
 import "./index.css"
-
-// import { useState, useEffect } from 'react';
 
 function Action(props){
 
@@ -24,6 +23,7 @@ function Action(props){
                 <BluePumpComponent/>
                 <YellowPumpComponent/>
                 <ElectricPump/>
+                <PTU/>
             </div>
         </div>
     )

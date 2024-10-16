@@ -6,7 +6,7 @@ import React, { useEffect, useState , useContext} from "react";
 
 function PressureIndication(props){
 
-    const [pressure, setPressure] = useState(0); // State to hold the pressure value
+    const [pressure, setPressure] = useState(0);
 
     // const { GreenHydraulicPressure, BlueHydraulicPressure, YellowHydraulicPressure} = useContext(Context);
 
@@ -54,9 +54,7 @@ function PressureIndication(props){
     useEffect(() => {
         if(props.Indication > 0){presurizeAnimation()}
         else if(props.Indication == 0){depresurizeAnimation()}
-        
-        
-    }, [props.Indication]); // Dependency array to rerun effect on change
+    }, [props.Indication]);
 
     return(
         <div className="PressIndicationContainer">

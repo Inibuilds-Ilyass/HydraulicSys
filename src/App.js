@@ -11,28 +11,28 @@ function App() {
     const [ACPower, setACPower] = useState(false);
     const [BluePump, setBluePump] = useState(false);
     const [YellowPump, setYellowPump] = useState(false);
-    const [YellowPumpBTN, setYellowPumpBTN] = useState(false);
     const [GreenPump, setGreenPump] = useState(false);
     const [ElecPump, setElecPump] = useState(false);
+    const [PowerTransferUnit, setPowerTransferUnit] = useState(false);
     const [CargoDoor, setCargoDoor] = useState(false);
 
-    // Engine Values States
     
-    const [GreenHydraulicPressure, setGreenHydraulicPressure] = useState({
+    
+    const [GreenHydraulicValues, setGreenHydraulicValues] = useState({
         FluidQte : 1.45,
         FluidminQTE : 0.25,
         Indication : 0,
         ShutOff : false,
         LowState : true,
     })
-    const [BlueHydraulicPressure, setBlueHydraulicPressure] = useState({
+    const [BlueHydraulicValues, setBlueHydraulicValues] = useState({
         FluidQte : 1.45,
         FluidminQTE : 0.25,
         Indication : 0,
         ShutOff : false,
         LowState : true,
     })
-    const [YellowHydraulicPressure, setYellowHydraulicPressure] = useState({
+    const [YellowHydraulicValues, setYellowHydraulicValues] = useState({
         FluidQte : 1.45,
         FluidminQTE : 0.25,
         Indication : 0,
@@ -52,8 +52,6 @@ function App() {
 
             YellowPump,
             setYellowPump,
-            YellowPumpBTN,
-            setYellowPumpBTN,
 
             GreenPump,
             setGreenPump,
@@ -64,15 +62,18 @@ function App() {
             CargoDoor,
             setCargoDoor,
 
-            // Engine Values
-            GreenHydraulicPressure,
-            setGreenHydraulicPressure,
+            PowerTransferUnit,
+            setPowerTransferUnit,
 
-            BlueHydraulicPressure,
-            setBlueHydraulicPressure,
+            // Engine Values
+            GreenHydraulicValues,
+            setGreenHydraulicValues,
+
+            BlueHydraulicValues,
+            setBlueHydraulicValues,
             
-            YellowHydraulicPressure,
-            setYellowHydraulicPressure,
+            YellowHydraulicValues,
+            setYellowHydraulicValues,
         }}>
             <div className="App">
                 <ECAMDisplay />

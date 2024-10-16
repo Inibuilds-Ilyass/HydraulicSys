@@ -4,11 +4,11 @@ import { Context } from "../../../App";
 import "./index.css"
 
 function BluePumpComponent() {
-    const { BluePump, setBluePump, setBlueHydraulicPressure} = useContext(Context);
+    const { BluePump, setBluePump, setBlueHydraulicValues} = useContext(Context);
 
 
     const toggleBlueHydraulicPressure = () => {
-        setBlueHydraulicPressure(prevState => {
+        setBlueHydraulicValues(prevState => {
             if (prevState.Indication === 0) {
                 // Set to the first state
                 return {

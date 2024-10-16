@@ -3,75 +3,108 @@ import YellowElecPump from "../YellowElecPump";
 
 import "./index.css";
 
-import React, { useContext, useState } from "react"; // Removed useState and useEffect as they are not used here
+import React, { useContext, useEffect, useState, useRef } from "react"; 
 import { Context } from "../../App";
 
 function ECAMDisplay() {
-    // Destructure values from the context
     const {
          ACPower, 
-         BlueElecPump, 
-         GreenHydraulicPressure, 
-         BlueHydraulicPressure,
-         YellowHydraulicPressure
-        } = useContext(Context);
+         GreenHydraulicValues, 
+         BlueHydraulicValues,
+         YellowHydraulicValues,
+         GreenPump,
+    } = useContext(Context);
 
+    const [DisplayContent, setDisplayContent] = useState(null);
+    const [displaySelfTestIndex, setDisplaySelfTestIndex] = useState(true);
+    
+    const firstUpdate = useRef(true);  // Ref to track the first update
 
-    let displayContent;
+    function turnOnEcam() {
+        console.log("Green Hydraulic Values:", GreenHydraulicValues);
+        console.warn(`-----------------------------------------------------------------`);
 
-    if (ACPower) {
-        displayContent = (
-            <> 
+        if (ACPower) {
+            if (!displaySelfTestIndex) {
+                setDisplayContent(
+                    <> 
+                        <div className="DisplayHeader"></div>
+                        <div className="DisplayBody">
+                            <p style={{ color: "green" }}>
+                                SELF TEST IN PROGRESS (MAX 40 SECONDS)
+                            </p>
+                        </div>
+                        <div className="DisplayFooter"></div>
+                    </>
+                );
 
-            <div className="DisplayHeader">
-                <h1>HYD</h1>
-            </div>
-            <div className="DisplayBody">
-                <HydraulicSYS   
-                    HydraulicSYSName={"Green"}
-                    FluidQte = {GreenHydraulicPressure.FluidQte}
-                    FluidminQTE = {GreenHydraulicPressure.FluidminQTE}
-                    Indication = {GreenHydraulicPressure.Indication}
-                    ShutOff = {GreenHydraulicPressure.ShutOff}
-                    LowState = {GreenHydraulicPressure.LowState}
-                    ShutoffRender = {true}
-                />
+                const waitTime = Math.floor(Math.random() * (40 - 10 + 1)) + 10 * 1000; // Convert to milliseconds
 
-                <HydraulicSYS
-                    HydraulicSYSName={"Blue"}
-                    FluidQte = {BlueHydraulicPressure.FluidQte}
-                    FluidminQTE = {BlueHydraulicPressure.FluidminQTE}
-                    Indication = {BlueHydraulicPressure.Indication}
-                    ShutOff = {BlueHydraulicPressure.ShutOff}
-                    LowState = {BlueHydraulicPressure.LowState}
-                    ShutoffRender = {false}
-                />
+                const timer = setTimeout(() => {
+                    setDisplaySelfTestIndex(true);
+                }, waitTime);
 
-                <HydraulicSYS
-                    HydraulicSYSName={"Yellow"}
-                    FluidQte = {YellowHydraulicPressure.FluidQte}
-                    FluidminQTE = {YellowHydraulicPressure.FluidminQTE}
-                    Indication = {YellowHydraulicPressure.Indication}
-                    ShutOff = {YellowHydraulicPressure.ShutOff}
-                    LowState = {YellowHydraulicPressure.LowState}
-                    ShutoffRender = {true}
-                />
-                <YellowElecPump/>
-            </div>
-
-            <div className="DisplayFooter">
-                <h1>Other</h1>
-            </div>
-            </>
-        );
-    } else {
-        // If ACPower is false, set the message
-        displayContent = <p>US GPU is Off</p>;
+                return () => clearTimeout(timer); // Clean up timer
+            } else {
+                setDisplayContent(
+                    <> 
+                        <div className="DisplayHeader">
+                            <h1>HYD</h1>
+                        </div>
+                        <div className="DisplayBody">
+                            <HydraulicSYS   
+                                HydraulicSYSName={"Green"}
+                                FluidQte={GreenHydraulicValues ? GreenHydraulicValues.FluidQte : 0}
+                                FluidminQTE={GreenHydraulicValues ? GreenHydraulicValues.FluidminQTE : 0}
+                                Indication={GreenHydraulicValues ? GreenHydraulicValues.Indication : 0}
+                                ShutOff={GreenHydraulicValues ? GreenHydraulicValues.ShutOff : false}
+                                LowState={GreenHydraulicValues ? GreenHydraulicValues.LowState : false}
+                                ShutoffRender={true}
+                            />
+                            <HydraulicSYS
+                                HydraulicSYSName={"Blue"}
+                                FluidQte={BlueHydraulicValues ? BlueHydraulicValues.FluidQte : 0}
+                                FluidminQTE={BlueHydraulicValues ? BlueHydraulicValues.FluidminQTE : 0}
+                                Indication={BlueHydraulicValues ? BlueHydraulicValues.Indication : 0}
+                                ShutOff={BlueHydraulicValues ? BlueHydraulicValues.ShutOff : false}
+                                LowState={BlueHydraulicValues ? BlueHydraulicValues.LowState : false}
+                                ShutoffRender={false}
+                            />
+                            <HydraulicSYS
+                                HydraulicSYSName={"Yellow"}
+                                FluidQte={YellowHydraulicValues ? YellowHydraulicValues.FluidQte : 0}
+                                FluidminQTE={YellowHydraulicValues ? YellowHydraulicValues.FluidminQTE : 0}
+                                Indication={YellowHydraulicValues ? YellowHydraulicValues.Indication : 0}
+                                ShutOff={YellowHydraulicValues ? YellowHydraulicValues.ShutOff : false}
+                                LowState={YellowHydraulicValues ? YellowHydraulicValues.LowState : false}
+                                ShutoffRender={true}
+                            />
+                            <YellowElecPump />
+                        </div>
+                        <div className="DisplayFooter">
+                            <h1>Other</h1>
+                        </div>
+                    </>
+                );
+            }
+        } else {
+            setDisplayContent(<></>);
+        }
     }
+
+    useEffect(() => {
+        if (firstUpdate.current) {
+            console.log("here");  // Log when the effect runs for the first time
+            firstUpdate.current = false;  // Set it to false so this block doesn't run again
+            return;  // Skip the effect logic for the first render
+            
+        }
+        turnOnEcam();  // Call the function on subsequent renders
+    }, [ACPower, displaySelfTestIndex, GreenPump]);
 
     return (
         <div className="Display">
-            {displayContent}
+            {DisplayContent}
         </div>
     );
 }
