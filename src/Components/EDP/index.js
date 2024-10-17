@@ -1,6 +1,7 @@
 import "./index.css"
 
 function EDP(props){
+
     // alert(props.Shut)
     return(
         <div className="square"

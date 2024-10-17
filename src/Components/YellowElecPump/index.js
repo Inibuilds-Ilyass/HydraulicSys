@@ -1,5 +1,5 @@
 import "./index.css";
-import React, { useContext, useEffect, useState } from "react"; // Ensure React is imported
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../../App";
 
 function YellowElecPump() {
@@ -8,9 +8,9 @@ function YellowElecPump() {
     const [ElecPumpIndicationColor, setElecPumpIndicationColor] = useState("white");
 
     useEffect(() => {
-        // Set the color based on ElecPump state
-        setElecPumpIndicationColor(ElecPump ? "green" : "white");
-    }, [ElecPump]); // Run this effect whenever ElecPump changes
+        
+        setElecPumpIndicationColor(ElecPump ? "white": "green" );
+    }, [ElecPump]);
 
     return (
         <div className="ElectricPump">

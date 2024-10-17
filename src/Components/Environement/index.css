@@ -8,3 +8,10 @@
 .Environement span{
     color: green;
 }
+
+.Environement>div{
+    
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+}

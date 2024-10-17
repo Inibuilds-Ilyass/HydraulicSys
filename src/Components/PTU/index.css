@@ -1,0 +1,38 @@
+.PTUIndication{
+    position: absolute;
+    z-index: 1;
+    color: green;
+    translate: 0vw -15vh;
+    width: 30vw;
+}
+.PTUIndicationContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid green;
+}
+.arrowline{
+
+    width: 2.5vw;
+    height: 2px;
+    background-color: green;
+}
+.PTUText{
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+.half-circle {
+   border-bottom: 2px green solid;
+   border-left: 2px green solid;
+   width: 2vw;
+   height: 2vw;
+   border-radius: 20px;
+   transform: rotate(-45deg);
+}

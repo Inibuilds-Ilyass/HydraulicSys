@@ -7,12 +7,12 @@ import "./index.css"
 function GreenElectricPump() {
 
 
-    const { GreenPump, setGreenPump, GreenHydraulicValues, setGreenHydraulicValues} = useContext(Context);
+    const { GreenPump, setGreenPump, setGreenHydraulicValues} = useContext(Context);
     
-    const firstUpdate = useRef(true);
+    function handleToggleGreenPump(){
+        setGreenPump(prevState => !prevState)
+        setGreenHydraulicValues((prevState)=>{
 
-    const HandleGreenHydraulicValues = () => {
-        setGreenHydraulicValues(prevState => {
             if (prevState.Indication === 0) {
                 return {
                     FluidQte: 1.45,
@@ -30,28 +30,17 @@ function GreenElectricPump() {
                     LowState : true,
                 };
             }
-        });
-    };
+            }  
+        )
 
 
-    useEffect(()=>{
-        if (firstUpdate.current) {
-          firstUpdate.current = false;
-          return;
-        }
-        HandleGreenHydraulicValues()
-    },[GreenPump])
-
-    
-    const handleGreenPumpBTN = () => {
-        setGreenPump(prevState => !prevState);
-    };
+    }
 
     return (
-        <div className="extpwrbtn greenpmp" onClick={handleGreenPumpBTN}>
+        <div className="extpwrbtn greenpmp" onClick={handleToggleGreenPump}>
             <button>
                 <div className="btnName">GREEN PUMP</div>
-                <div className="btnAction" dangerouslySetInnerHTML={{ __html: GreenPump ?   "<p>on</p>" : ""  }}></div>
+                <div className="btnAction" dangerouslySetInnerHTML={{ __html: GreenPump ?   ""  : "<p>on</p>" }}></div>
             </button>
         </div>
     );

@@ -5,8 +5,8 @@ function FireShutoffValve(props){
 
     if(props.Render === true){
         return(
-            <div class="circle">
-                <div class="line LOW"
+            <div className="circle">
+                <div className="line LOW"
                     style={{ 
                         transform: props.Shut === true ? 'rotate(90deg) translate(-50%, -0%)' : 'rotate(0deg) translate(-50%, -0%)',
                         top: '50%',

@@ -4,6 +4,7 @@ import YellowPumpComponent from "./YellowPump";
 import GreenPumpComponent from "./GreenPump";
 import ElectricPump from "./ElectricPump";
 import PTU from "./PTU";
+import UseAcc from "./UseAcc";
 
 
 import "./index.css"
@@ -24,6 +25,11 @@ function Action(props){
                 <YellowPumpComponent/>
                 <ElectricPump/>
                 <PTU/>
+            </div>
+
+            
+            <div className="Do">
+                <UseAcc/>
             </div>
         </div>
     )

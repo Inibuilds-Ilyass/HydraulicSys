@@ -9,13 +9,13 @@ export const Context = createContext();
 
 function App() {
     const [ACPower, setACPower] = useState(false);
-    const [BluePump, setBluePump] = useState(false);
-    const [YellowPump, setYellowPump] = useState(false);
-    const [GreenPump, setGreenPump] = useState(false);
-    const [ElecPump, setElecPump] = useState(false);
-    const [PowerTransferUnit, setPowerTransferUnit] = useState(false);
+    const [BluePump, setBluePump] = useState(true);
+    const [YellowPump, setYellowPump] = useState(true);
+    const [GreenPump, setGreenPump] = useState(true);
+    const [ElecPump, setElecPump] = useState(true);
+    const [PowerTransferUnit, setPowerTransferUnit] = useState(true);
     const [CargoDoor, setCargoDoor] = useState(false);
-
+    const [UseAcc, setUseAcc] = useState(false);
     
     
     const [GreenHydraulicValues, setGreenHydraulicValues] = useState({
@@ -41,6 +41,7 @@ function App() {
     })
 
 
+    const [Accumulator, setAccumulator] = useState(3000);
 
     return (
         <Context.Provider value={{
@@ -65,6 +66,12 @@ function App() {
             PowerTransferUnit,
             setPowerTransferUnit,
 
+            UseAcc,
+            setUseAcc,
+
+            Accumulator,
+            setAccumulator,
+            
             // Engine Values
             GreenHydraulicValues,
             setGreenHydraulicValues,
