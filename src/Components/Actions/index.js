@@ -1,10 +1,11 @@
-import ExtPwr from "./ExtPwr"
+// import ExtPwr from "./ExtPwr"
 import BluePumpComponent from "./BluePump";
 import YellowPumpComponent from "./YellowPump";
 import GreenPumpComponent from "./GreenPump";
 import ElectricPump from "./ElectricPump";
 import PTU from "./PTU";
 import UseAcc from "./UseAcc";
+import ExtPwr from "./EXTPWR"
 
 
 import "./index.css"
