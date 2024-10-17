@@ -36,7 +36,7 @@ function YellowPumpComponent() {
     }
 
     return (
-        <div className="extpwrbtn yellowpmp" onClick={handleToggleYellowPump}>
+        <div className="btn yellowpmp" onClick={handleToggleYellowPump}>
             <button>
                 <div className="btnName">YELLOW PUMP</div>
                 <div className="btnAction" dangerouslySetInnerHTML={{ __html: YellowPump ? "" : "<p>on</p>"  }}></div>

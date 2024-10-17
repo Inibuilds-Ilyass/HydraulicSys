@@ -14,7 +14,6 @@
     height: 150%;
     background-color: green;
     translate: -1px -2.2vw;
-    /* transform-origin: bottom; Set the point of rotation */
 }
 
 
@@ -25,7 +24,7 @@
     left: 50%;
     color: orange;
     transform: rotate(0deg) translate(-51%, -100%)!important;
-    transform-origin: top; /* Set the point of rotation */
+    transform-origin: top;
     font-weight: 700;
 }
 

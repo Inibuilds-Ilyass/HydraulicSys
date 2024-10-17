@@ -5,7 +5,6 @@ import ECAMStatus from "./ECAMStatus";
 
 import React, { useState, useEffect, useContext} from "react";
 
-import { Context } from "../../App";
 
 function Environement(){
 

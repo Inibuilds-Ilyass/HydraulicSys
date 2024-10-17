@@ -12,7 +12,7 @@ function UseAcc(){
 
         
     return(
-        <div className="extpwrbtn greenpmp" onClick={()=>{setUseAcc(prevState => !prevState)}}>
+        <div className="btn greenpmp" onClick={()=>{setUseAcc(prevState => !prevState)}}>
             <button>
                 <div className="btnName">USE ACC</div>
                 <div className="btnAction" dangerouslySetInnerHTML={{ __html: UseAcc ?"<p>use</p>" : ""  }}></div>

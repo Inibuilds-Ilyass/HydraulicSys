@@ -18,8 +18,6 @@ function PTU() {
 
     function handlePTUToggle(){
         
-        // console.log(PowerTransferUnit)
-        // console.log("handlePTUToggle Executed")
         setGreenHydraulicValues(
             () =>{
                 if(YellowHydraulicValues.Indication > 0 && !PowerTransferUnit){
@@ -33,7 +31,7 @@ function PTU() {
                     };
                 
                 }
-                // console.log(GreenPump)
+                
                 if(!GreenPump){
                     return {
                         FluidQte: 1.45,
@@ -60,7 +58,7 @@ function PTU() {
     },[PowerTransferUnit, YellowPump, ElecPump])
 
     return (
-        <div className="extpwrbtn greenpmp" onClick={()=>{setPowerTransferUnit(prevState => !prevState)}}>
+        <div className="btn greenpmp" onClick={()=>{setPowerTransferUnit(prevState => !prevState)}}>
             <button>
                 <div className="btnName">PTU</div>
                 <div className="btnAction" dangerouslySetInnerHTML={{ __html: PowerTransferUnit ?"<p>off</p>" : ""  }}></div>

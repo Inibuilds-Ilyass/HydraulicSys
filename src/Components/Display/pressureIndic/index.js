@@ -1,54 +1,49 @@
 import "./index.css"
 
-import { Context } from "../../App";
-
 import React, { useEffect, useState , useContext} from "react";
 
 function PressureIndication(props){
 
     const [pressure, setPressure] = useState(0);
 
-    // const { GreenHydraulicPressure, BlueHydraulicPressure, YellowHydraulicPressure} = useContext(Context);
-
 
 
     function presurizeAnimation(){
-        let start = 0; // Starting value
-        const end = props.Indication; // Ending value (from props)
-        const duration = 10; // Duration of the animation in milliseconds
-        const stepTime = Math.abs(Math.floor(duration / (end - start))); // Time per step
+        let start = 0;
+        const end = props.Indication;
+        const duration = 10;
+        const stepTime = Math.abs(Math.floor(duration / (end - start)));
         const timer = setInterval(() => {
         if (start < end) {
-            start += 15; // Increment the value
-            setPressure(start); // Update state
+            start += 15;
+            setPressure(start)
         }
         
         else {
             clearInterval(timer);
-            // Update state // Clear the timer when finished
         }
         }, stepTime);
 
-        return () => clearInterval(timer); // Cleanup on unmount
+        return () => clearInterval(timer);
     }
 
     const depresurizeAnimation = () => {
-        let start = pressure; // Starting value (current pressure)
-        const end = 0; // Ending value (0)
-        const duration = 10; // Duration of the animation in milliseconds
-        const stepTime = Math.abs(Math.floor(duration / (start - end))); // Time per step
+        let start = pressure;
+        const end = 0;
+        const duration = 10;
+        const stepTime = Math.abs(Math.floor(duration / (start - end)));
     
         const timer = setInterval(() => {
           if (start > end) {
-            start -= 15; // Decrement the value
-            setPressure(start); // Update state
+            start -= 15;
+            setPressure(start);
           } else {
-            clearInterval(timer); // Clear the timer when finished
-            setPressure(0); // Ensure the pressure is set to 0 at the end
+            clearInterval(timer);
+            setPressure(0);
           }
         }, stepTime);
     
-        return () => clearInterval(timer); // Cleanup on unmount
+        return () => clearInterval(timer);
       };
 
     useEffect(() => {

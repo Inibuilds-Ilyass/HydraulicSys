@@ -13,7 +13,7 @@
 }
 
 
-.extpwrbtn{
+.btn{
     width: 5vw;
     height: 5vw;
     border-radius: 15px;
@@ -22,7 +22,7 @@
     align-items: center;
     margin: 1vw;
 }
-.extpwrbtn > button{
+.btn > button{
     width: 4vw;
     height: 4vw;
     border-radius: 5px;
@@ -31,7 +31,7 @@
     cursor: pointer;
     
 }
-.extpwrbtn > button > div{
+.btn > button > div{
     
     display: flex;
     justify-content: center;

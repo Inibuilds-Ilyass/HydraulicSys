@@ -11,7 +11,7 @@ function ExtPwr() {
     };
 
     return (
-        <div className="extpwrbtn extpwr" onClick={handleACPowerToggle}>
+        <div className="btn extpwr" onClick={handleACPowerToggle}>
             <button>
                 <div className="btnName">EXT PWR</div>
                 <div className="btnAction" dangerouslySetInnerHTML={{ __html: ACPower ? "<p>on</p>" : "" }}></div>

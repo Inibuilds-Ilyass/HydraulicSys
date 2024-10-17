@@ -37,7 +37,7 @@ function GreenElectricPump() {
     }
 
     return (
-        <div className="extpwrbtn greenpmp" onClick={handleToggleGreenPump}>
+        <div className="btn greenpmp" onClick={handleToggleGreenPump}>
             <button>
                 <div className="btnName">GREEN PUMP</div>
                 <div className="btnAction" dangerouslySetInnerHTML={{ __html: GreenPump ?   ""  : "<p>on</p>" }}></div>

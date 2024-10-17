@@ -37,7 +37,7 @@ function BluePumpComponent() {
     }
 
     return (
-        <div className="extpwrbtn bluepmp" onClick={handleToggleBluePump}>
+        <div className="btn bluepmp" onClick={handleToggleBluePump}>
             <button>
                 <div className="btnName">BLUE PUMP</div>
                 <div className="btnAction" dangerouslySetInnerHTML={{ __html: BluePump ?  "" : "<p>on</p>" }}></div>

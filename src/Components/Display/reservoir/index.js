@@ -1,4 +1,3 @@
-import CustomLine from "../Lines"
 
 import { useEffect, useState } from "react"
 
@@ -32,18 +31,11 @@ function Reservoir(props){
     return(
         <div>
 
-            {/* <CustomLine
-                color = "white"
-                width = "1vw"
-                height= "10vw"
-                rotationDegrees="0"
-            /> */}
-
             <div className="ResevoirLine">
                 <div className="GreenLine"
                     style={{ 
                     height: `${HYDQTE}vw`,
-                    border: HYDQTE <= minHYDQTE ? "2px solid orange" : "2px solid green" // Correctly setting the border based on condition
+                    border: HYDQTE <= minHYDQTE ? "2px solid orange" : "2px solid green"
                 }}
                  ></div>
                 <div className="whiteLine"></div>
