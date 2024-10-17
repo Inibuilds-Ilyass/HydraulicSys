@@ -20,10 +20,10 @@ function ECAMStatus() {
       let messages = [];
   
       if (YellowPump) {
-        messages.push(<p className="ECAMStatusMessageWarning">HYD G ENG 1 PUMP LO PR</p>);
+        messages.push(<p className="ECAMStatusMessageWarning">HYD Y ENG 1 PUMP LO PR</p>);
       }
       if (YellowHydraulicValues.Indication === 0) {
-        messages.push(<p className="ECAMStatusMessageWarning">HYD G SYS LO PR</p>);
+        messages.push(<p className="ECAMStatusMessageWarning">HYD Y SYS LO PR</p>);
       }
   
       if (BluePump) {
@@ -34,11 +34,11 @@ function ECAMStatus() {
       }
   
       if (GreenPump) {
-        messages.push(<p className="ECAMStatusMessageWarning">HYD Y ENG 2 PUMP LO PR</p>);
+        messages.push(<p className="ECAMStatusMessageWarning">HYD G ENG 2 PUMP LO PR</p>);
       }
       
       if (GreenHydraulicValues.Indication === 0) {
-        messages.push(<p className="ECAMStatusMessageWarning">HYD Y SYS LO PR</p>);
+        messages.push(<p className="ECAMStatusMessageWarning">HYD G SYS LO PR</p>);
       }
 
       
@@ -59,7 +59,7 @@ function ECAMStatus() {
         setstatusContent(<p></p>);
       }
     } else {
-      setstatusContent(<p>AC Power is Off</p>);
+      setstatusContent(<p></p>);
     }
   }, [ACPower, YellowHydraulicValues, BlueHydraulicValues, GreenHydraulicValues]);
   
