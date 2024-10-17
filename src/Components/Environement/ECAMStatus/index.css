@@ -1,5 +1,21 @@
 .ECAMStatus{
     width: 20vw;
-    height: 15vw;
+    height: 25vw;
     background-color: black;
+    overflow-y: auto;
+}
+.ECAMStatusMessageWarning{
+    color: orange;
+    padding-left: 1vw;
+    border: 1px solid orange;
+}
+.ECAMStatusMessageFailure{
+    color: red;
+    padding-left: 1vw;
+    border: 1px solid red;
+
+}
+.ECAMStatusMessageFailureInstructions{
+    color: rgb(0, 140, 255);
+    padding-left: 1vw;
 }

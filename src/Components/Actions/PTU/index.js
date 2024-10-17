@@ -18,7 +18,7 @@ function PTU() {
 
     function handlePTUToggle(){
         
-        console.log(PowerTransferUnit)
+        // console.log(PowerTransferUnit)
         // console.log("handlePTUToggle Executed")
         setGreenHydraulicValues(
             () =>{
