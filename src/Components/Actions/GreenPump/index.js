@@ -12,8 +12,8 @@ function GreenElectricPump() {
     function handleToggleGreenPump(){
         setGreenPump(prevState => !prevState)
         setGreenHydraulicValues((prevState)=>{
-
-            if (prevState.Indication === 0) {
+            // console.log(GreenPump)
+            if (prevState.Indication === 0 && GreenPump) {
                 return {
                     FluidQte: 1.45,
                     FluidminQTE: 0.25,

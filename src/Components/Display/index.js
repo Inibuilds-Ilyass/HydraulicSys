@@ -99,7 +99,7 @@ function ECAMDisplay() {
 
     useEffect(()=>{
         turnOnEcam();
-    },[ACPower, GreenPump, BluePump, YellowPump, ElecPump, PowerTransferUnit])
+    },[ACPower, GreenPump, BluePump, YellowPump, ElecPump, PowerTransferUnit,GreenHydraulicValues])
     
 
     return (

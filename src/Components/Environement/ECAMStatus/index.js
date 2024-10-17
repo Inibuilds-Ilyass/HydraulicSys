@@ -1,43 +1,49 @@
-import "./index.css"
-
-import React, { useState, useEffect, useContext} from "react";
-
+import "./index.css";
+import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../../../App";
 
-function ECAMStatus(){
-    const [statusContent, setstatusContent] = useState(<></>)
-    const {
+function ECAMStatus() {
+  const [statusContent, setstatusContent] = useState(<></>);
+  
+  const {
+    YellowHydraulicValues,
+    BlueHydraulicValues,
+    GreenHydraulicValues,
+    BluePump,
+    YellowPump,
+    GreenPump,
+    ACPower
+  } = useContext(Context);
 
-        YellowHydraulicValues,
-        BlueHydraulicValues,
-        GreenHydraulicValues,
-        
-        
-        BluePump,
-        YellowPump,
-        GreenPump,
+  useEffect(() => {
+    if (ACPower === true) {
+      if (YellowHydraulicValues.Indication === 0) {
+        setstatusContent(<p>Yellow Hydraulic Failure</p>);
+      }
 
-        ACPower
+      if (BlueHydraulicValues.Indication === 0) {
+        const message = <p>Blue Hydraulic Failure</p>;
 
-        } = useContext(Context);
-    
-    useEffect(()=>{
+        // Concatenating the new message with previous content
+        setstatusContent(prevState => (
+          <div>
+            {prevState}
+            {message}
+          </div>
+        ));
+      } else {
+        setstatusContent(<p></p>);
+      }
+    } else {
+      setstatusContent(<p></p>);
+    }
+  }, [ACPower, YellowHydraulicValues, BlueHydraulicValues]);
 
-        if (ACPower === true){
-            setstatusContent(<p>hello</p>)
-
-
-        }
-        else{
-            setstatusContent(<p></p>)
-        }
-    },[ACPower])
-        
-    return(
-        <div className="ECAMStatus">
-            {statusContent}
-        </div>
-    )
+  return (
+    <div className="ECAMStatus">
+      {/* {statusContent} */}
+    </div>
+  );
 }
 
 export default ECAMStatus;

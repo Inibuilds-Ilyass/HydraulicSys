@@ -12,17 +12,18 @@ function PTU() {
         ElecPump,
 
 
-
+        GreenPump,
         GreenHydraulicValues,
         } = useContext(Context);
 
     function handlePTUToggle(){
         
-        // console.log(PowerTransferUnit)
+        console.log(PowerTransferUnit)
         // console.log("handlePTUToggle Executed")
         setGreenHydraulicValues(
             () =>{
-                if(YellowHydraulicValues.Indication > 0 && PowerTransferUnit){
+                if(YellowHydraulicValues.Indication > 0 && !PowerTransferUnit){
+                    console.log("here")
                     return {
                         FluidQte: 1.45,
                         FluidminQTE: 0.25,
@@ -30,7 +31,19 @@ function PTU() {
                         ShutOff: false,
                         LowState : false,
                     };
-                }else{ 
+                
+                }
+                // console.log(GreenPump)
+                if(!GreenPump){
+                    return {
+                        FluidQte: 1.45,
+                        FluidminQTE: 0.25,
+                        Indication: Math.floor(Math.random() * (3000 - 2900 + 1)) + 2900,
+                        ShutOff: false,
+                        LowState : false,
+                    };
+                }
+                else{ 
                     return {
                         FluidQte: 1.45,
                         FluidminQTE: 0.25,
